@@ -11,6 +11,9 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+# Use Pry to debug
+gem 'pry'
+
 # Use Guard LiveReload to auto update views
 group :development do
   gem 'guard'
@@ -18,13 +21,14 @@ group :development do
   gem 'rack-livereload'
 end
 
-# Use Pry to debug
-gem 'pry'
-
 # Use SCSS for stylesheets, Foundation for styles, and Font Awesome for icons
 gem 'sass-rails', '~> 4.0.0'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
+
+# Use OmniAuth for Twitter authentication
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 # Use Uglifier as compressor for JavaScript assetss
 gem 'uglifier', '>= 1.3.0'

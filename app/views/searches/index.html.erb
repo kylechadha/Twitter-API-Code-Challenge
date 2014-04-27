@@ -1,2 +1,9 @@
-<h1>Searches#index</h1>
-<p>Find me in app/views/searches/index.html.erb</p>
+<% if current_user %>
+  Hey there <strong><%= current_user.name %></strong>, looking pretty good today!<br><br>
+  <%= link_to "Sign Out", logout_path %>
+<% else %>
+  <%= link_to "Sign in with Twitter!", "/auth/twitter" %>
+<% end %>
+<br><br>
+
+<%= @results %>

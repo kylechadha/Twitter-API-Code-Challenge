@@ -1,6 +1,9 @@
 TwitterExplorer::Application.routes.draw do
+  get "searches/index"
+  get "searches/new"
   root 'welcome#index'
   get "welcome/index"
 
-  match "/auth/twitter/callback" => "sessions#create", via: [:get, :post]
+  get "/auth/twitter/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy", :as => :logout
 end

@@ -27,8 +27,10 @@ gem 'foundation-rails'
 gem 'font-awesome-rails'
 
 # Use OmniAuth for Twitter authentication
-gem 'omniauth'
 gem 'omniauth-twitter'
+
+# Use HTTParty for communication with the Twitter API
+gem 'httparty'
 
 # Use Uglifier as compressor for JavaScript assetss
 gem 'uglifier', '>= 1.3.0'

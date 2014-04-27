@@ -19,6 +19,8 @@ TwitterExplorer::Application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
+  # Use Rack::LiveReload
+  config.middleware.use Rack::LiveReload
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large

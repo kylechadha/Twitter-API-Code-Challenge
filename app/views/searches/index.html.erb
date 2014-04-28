@@ -1,6 +1,18 @@
+<!-- 
+Major Oustanding Todos
+-Update API keys
+-Hide API keys / secret
+- 
+-->
+
+<br>
 <div class="row">
-  
+  <%= form_tag root_path, :method => 'get' do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search" %>
+  <% end %>
 </div>
+
 <div class="row">
   <br>
   <% if current_user %>
@@ -8,8 +20,10 @@
   <% end %>
   <br>
   <ul>
-    <% @results['statuses'].each do |tweet| %>
-      <li><%= tweet['text'] %></li>
+    <% if params[:search] %>
+      <% @results['statuses'].each do |tweet| %>
+        <li><%= tweet['text'] %></li>
+      <% end %>
     <% end %>
   </ul>
 

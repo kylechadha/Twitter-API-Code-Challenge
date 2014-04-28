@@ -11,8 +11,11 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-# Use Pry to debug
+# Use Pry to debug and Better Errors for better errors
 gem 'pry'
+group :development do
+  gem 'better_errors'
+end
 
 # Use Guard LiveReload to auto update views
 group :development do

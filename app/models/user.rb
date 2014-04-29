@@ -5,4 +5,13 @@ class User
   field :name, type: String
   field :access_token, type: String
   field :access_token_secret, type: String
+
+  def twitter
+    @twitter ||= Twitter::REST::Client.new do |config|
+      config.consumer_key        = "EGtAiRXlnFzX90MPtkHA"
+      config.consumer_secret     = "OkDiA6C0Ej2yBg9Jh6Rdhoxc25b5aMfQLRwbY1Mw0U"
+      config.access_token        = access_token
+      config.access_token_secret = access_token_secret
+    end
+  end 
 end

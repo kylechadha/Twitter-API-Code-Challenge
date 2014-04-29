@@ -1,22 +1,34 @@
 class Search
   include Mongoid::Document
 
-  def self.request(keywords)
-    # search_results = 
+  # require 'oauth_util.rb'
 
-    # current_user.
-    # authorization_request = 
+  # def self.request(keywords)
 
-    HTTParty.get "https://api.twitter.com/1.1/search/tweets.json", 
-      {
-        query: {
-          q: keywords
-        },
-        headers: {
-          "Authorization" => 'OAuth oauth_consumer_key="900kdPyvEBSWxul2mPFWi4BdT", oauth_nonce="5851be947bed841b6464e43289a3fdb1", oauth_signature="lsRs5YSb53yiiZi9HGlRsGXG0Y8%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1398648488", oauth_token="1537159381-ZbqzUQ34orD7szZH52iywvov7DD7zqYjmwEwjWx", oauth_version="1.0"'
-        }
-      }
+    # oauth = OauthUtil.new
+    # parsed_url = URI.parse('https://api.twitter.com/1.1/search/tweets.json?q=monkeys')
+    # signed_params = oauth.sign(parsed_url).params
 
-  end
+    # oauth_consumer_key = signed_params['oauth_consumer_key']
+    # oauth_nonce = signed_params['oauth_nonce']
+    # oauth_signature = signed_params['oauth_signature']
+    # oauth_signature_method = signed_params['oauth_signature_method']
+    # oauth_timestamp = signed_params['oauth_timestamp']
+    # oauth_token = signed_params['oauth_token']
+
+    # authorization = 'OAuth oauth_consumer_key="' + oauth_consumer_key +'", oauth_nonce="' + oauth_nonce + '", oauth_signature="' + oauth_signature + '", oauth_signature_method="HMAC-SHA1", oauth_timestamp="' + oauth_timestamp + '", oauth_token="' + oauth_token + '", oauth_version="1.0"'
+
+    # HTTParty.get "https://api.twitter.com/1.1/search/tweets.json", 
+    #   {
+    #     query: {
+    #       q: keywords
+    #     },
+    #     headers: {
+    #       "Authorization" => authorization
+    #       # "Content-Type" => "application/x-www-form-urlencoded"
+    #     }
+    #   }
+
+  # end
 
 end

@@ -24,15 +24,15 @@ group :development do
   gem 'rack-livereload'
 end
 
-# Use SCSS for stylesheets, Foundation for styles, and Font Awesome for icons
+# Use SCSS, Foundation, and Font Awesome for styles
 gem 'sass-rails', '~> 4.0.0'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
 
-# Use OmniAuth for Twitter authentication
+# Use OmniAuth and Twitter gem for API communication
+gem 'omniauth'
 gem 'omniauth-twitter'
-
-# Use HTTParty for communication with the Twitter API
+gem 'twitter'
 gem 'httparty'
 
 # Use Uglifier as compressor for JavaScript assetss

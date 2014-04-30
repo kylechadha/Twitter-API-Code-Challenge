@@ -13,10 +13,12 @@ Major Oustanding Todos
     var searchVal;
     searchVal = $("#search").val();
 
+    var incrementVal = 0;
+
     $("#more").click(function() {
-      console.log("yay!");
-      $.get("/searches/", {search: searchVal, increment: 10}, null, 'script');
-      console.log(searchVal);
+      incrementVal += 10;
+      console.log(incrementVal);
+      $.get("/searches/", {search: searchVal, increment: incrementVal}, null, 'script');
     });
 
   };

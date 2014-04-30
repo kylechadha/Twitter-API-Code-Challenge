@@ -6,6 +6,21 @@ Major Oustanding Todos
 - 
 -->
 
+<script>
+  var ready;
+  ready = function() {
+
+    $("#more").click(function() {
+      console.log("yay!");
+      $.get("/searches/", {search: "monkeys", increment: 10}, null, 'script');
+    });
+
+  };
+
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+</script>
+
 <br>
 <div class="row">
   <% if current_user %>
@@ -17,12 +32,10 @@ Major Oustanding Todos
   <% end %>
 </div>
 
-<div class="row">
-  <% if params[:search] %>
-    <ul>
-      <% @results.each do |tweet| %>
-        <li><%= tweet.text %></li>
-      <% end %>
-    </ul>
-  <% end %>
+<div id="search-results" class="row">
+  <%= render 'results' %>
+</div>
+
+<div id="more" style="border: 2px solid red">
+  More
 </div>

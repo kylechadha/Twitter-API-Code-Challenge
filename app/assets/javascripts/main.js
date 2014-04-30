@@ -1,29 +1,30 @@
 
 // Infinite Scroll Functionality
 
-var currentPage = 1;
+// var currentPage = 1;
 
-function checkScroll() {
-  if (nearBottomOfPage()) {
-    currentPage++;
-    new Ajax.Request('/products.js?page=' + currentPage, {asynchronous:true, evalScripts:true, method:'get'});
-  } else {
-    setTimeout("checkScroll()", 250);
-  }
-}
+// function checkScroll() {
+//   if (nearBottomOfPage()) {
+//     currentPage++;
+//     new Ajax.Request('/products.js?page=' + currentPage, {asynchronous:true, evalScripts:true, method:'get'});
+//   } else {
+//     setTimeout("checkScroll()", 250);
+//   }
+// }
 
-function nearBottomOfPage() {
-  return scrollDistanceFromBottom() < 150;
-}
+// function nearBottomOfPage() {
+//   return scrollDistanceFromBottom() < 150;
+// }
 
-function scrollDistanceFromBottom(argument) {
-  return pageHeight() - (window.pageYOffset + self.innerHeight);
-}
+// function scrollDistanceFromBottom(argument) {
+//   return pageHeight() - (window.pageYOffset + self.innerHeight);
+// }
 
-function pageHeight() {
-  return Math.max(document.body.scrollHeight, document.body.offsetHeight);
-}
+// function pageHeight() {
+//   return Math.max(document.body.scrollHeight, document.body.offsetHeight);
+// }
 
-document.observe('dom:loaded', checkScroll);
+// document.observe('dom:loaded', checkScroll);
 
 // END
+

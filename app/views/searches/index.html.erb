@@ -10,9 +10,13 @@ Major Oustanding Todos
   var ready;
   ready = function() {
 
+    var searchVal;
+    searchVal = $("#search").val();
+
     $("#more").click(function() {
       console.log("yay!");
-      $.get("/searches/", {search: <%= escape_javascript(params[:search]).html_safe %>, increment: 10}, null, 'script');
+      $.get("/searches/", {search: searchVal, increment: 10}, null, 'script');
+      console.log(searchVal);
     });
 
   };
@@ -26,8 +30,8 @@ Major Oustanding Todos
   <% if current_user %>
     <!-- <h3>Hey there <strong><%= current_user.name %></strong>, looking pretty good today!</h3> -->
   <% end %>
-  <%= form_tag root_path, :method => 'get' do %>
-    <%= text_field_tag :search %>
+  <%= form_tag root_path, :method => 'get', :id => "search-box" do %>
+    <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search" %>
   <% end %>
 </div>

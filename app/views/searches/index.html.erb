@@ -6,27 +6,6 @@ Major Oustanding Todos
 - 
 -->
 
-<script>
-  var ready;
-  ready = function() {
-
-    var searchVal;
-    searchVal = $("#search").val();
-
-    var incrementVal = 0;
-
-    $("#more").click(function() {
-      incrementVal += 10;
-      console.log(incrementVal);
-      $.get("/searches/", {search: searchVal, increment: incrementVal}, null, 'script');
-    });
-
-  };
-
-  $(document).ready(ready);
-  $(document).on('page:load', ready);
-</script>
-
 <br>
 <div class="row">
   <% if current_user %>

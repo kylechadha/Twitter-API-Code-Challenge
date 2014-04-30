@@ -32,7 +32,7 @@ gem 'font-awesome-rails'
 # Use OmniAuth and Twitter gem for API communication
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'twitter'
+gem 'twitter', '5.0.0'
 gem 'httparty'
 
 # Use Uglifier as compressor for JavaScript assetss

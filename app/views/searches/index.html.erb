@@ -1,6 +1,6 @@
 <!-- 
 Major Oustanding Todos
--Hide API keys / secret
+-Hide API keys / secret (application_controller, user.rb, omniauth.rb)
 -Regenerate API keys
 -URL encode search queries
 - 
@@ -16,14 +16,13 @@ Major Oustanding Todos
     <%= submit_tag "Search" %>
   <% end %>
 </div>
-@gem@gem
+
 <div class="row">
-  <ul>
-    <% if params[:search] %>
-      <% current_user.twitter.update("Test tweet from the Twitter API") %>
-      <% current_user.twitter.search(params[:search]).take(20).each do |tweet| %>
-        <li><%= tweet['text'] %></li>
+  <% if params[:search] %>
+    <ul>
+      <% @results.each do |tweet| %>
+        <li><%= tweet.text %></li>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  <% end %>
 </div>

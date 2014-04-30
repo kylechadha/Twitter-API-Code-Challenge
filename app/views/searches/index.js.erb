@@ -1,1 +1,1 @@
-$("#search-results").html("<%= render 'results' %>");
+$("#search-results").html("<%= escape_javascript(render 'results').html_safe %>");

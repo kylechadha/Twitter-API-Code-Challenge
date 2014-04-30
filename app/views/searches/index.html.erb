@@ -12,7 +12,7 @@ Major Oustanding Todos
 
     $("#more").click(function() {
       console.log("yay!");
-      $.get("/searches/", {search: "monkeys", increment: 10}, null, 'script');
+      $.get("/searches/", {search: <%= escape_javascript(params[:search]).html_safe %>, increment: 10}, null, 'script');
     });
 
   };

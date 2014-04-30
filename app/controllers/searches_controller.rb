@@ -6,8 +6,11 @@ class SearchesController < ApplicationController
       @display = 10
     end
 
-    if params[:search]
+    # If authenticated, use user auth to search, otherwise use application auth 
+    if params[:search] and current_user
       @results = current_user.twitter.search(params[:search], :count => @display, :lang => 'en')
+    elsif params[:search]
+      @results = application.search(params[:search], :count => @display, :lang => 'en')
     end
 
     respond_to do |format|

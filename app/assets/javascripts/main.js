@@ -6,20 +6,22 @@ var searchVal;
 var scrollInterval;
 
 function checkScroll() {
-  if (nearBottomOfPage()) {
-    if ((incrementVal) < 100) {
-      incrementVal += 10;
-      console.log("Tweets Displayed: " + (incrementVal));
-      $.get("/searches/", {search: searchVal, increment: incrementVal}, null, 'script');
-    } else {
-      console.log("Max number of tweets displayed! Sorry! You'll have to bother those Twitter guys about this.");
-      clearInterval(scrollInterval);
-    }
-  }
+  if (searchVal) {
+    if (nearBottomOfPage()) {
+      if (incrementVal < 100) {
+        incrementVal += 10;
+        console.log("Tweets Displayed: " + (incrementVal));
+        $.get("/searches/", {search: searchVal, increment: incrementVal}, null, 'script');
+      } else {
+        console.log("Max number of tweets displayed! Sorry! You'll have to bother those Twitter guys about this.");
+        clearInterval(scrollInterval);
+      };
+    };
+  };
 };
 
 function nearBottomOfPage() {
-  return scrollDistanceFromBottom() < 150;
+  return scrollDistanceFromBottom() < 100;
 };
 
 function scrollDistanceFromBottom(argument) {

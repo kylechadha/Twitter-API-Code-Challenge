@@ -2,15 +2,13 @@
 Major Oustanding Todos
 -Hide API keys / secret (application_controller, user.rb, omniauth.rb)
 -Regenerate API keys
--URL encode search queries
-- 
+-URL encode search queries (check this is happening)
+-Get it deployed
+-Add comments everywhere
 -->
 
 <br>
 <div class="row">
-  <% if current_user %>
-    <!-- <h3>Hey there <strong><%= current_user.name %></strong>, looking pretty good today!</h3> -->
-  <% end %>
   <%= form_tag root_path, :method => 'get', :id => "search-box" do %>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search" %>

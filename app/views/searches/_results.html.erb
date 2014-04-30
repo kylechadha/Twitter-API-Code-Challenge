@@ -1,7 +1,12 @@
 <% if params[:search] %>
-  <ol>
+  <ul>
     <% @results.each do |tweet| %>
-      <li><%= tweet.user.user_name %> <%= tweet.text %></li>
+      <li class="tweet">
+        <%= image_tag("#{tweet.user.profile_image_url}") %> <strong><%= tweet.user.name %></strong> <%= "@#{tweet.user.user_name}" %><br>
+        <%= tweet.text %><br>
+        <a href="<%= tweet.uri %>" target="_blank"><%= tweet.uri %></a>
+      </li>
+      <br>
     <% end %>
-  </ol>
+  </ul>
 <% end %>

@@ -1,7 +1,7 @@
 <% if params[:search] %>
-  <ul>
+  <ol>
     <% @results.each do |tweet| %>
       <li><%= tweet.user.user_name %> <%= tweet.text %></li>
     <% end %>
-  </ul>
+  </ol>
 <% end %>

@@ -1,19 +1,25 @@
 
 // Infinite Scroll Functionality
 
-var incrementVal = 0;
+var incrementVal = 10;
 var searchVal;
+var scrollInterval;
 
 function checkScroll() {
   if (nearBottomOfPage()) {
-    incrementVal += 10;
-    console.log("Tweets Displayed: " + (incrementVal + 10));
-    $.get("/searches/", {search: searchVal, increment: incrementVal}, null, 'script');
+    if ((incrementVal) < 100) {
+      incrementVal += 10;
+      console.log("Tweets Displayed: " + (incrementVal));
+      $.get("/searches/", {search: searchVal, increment: incrementVal}, null, 'script');
+    } else {
+      console.log("Max number of tweets displayed! Sorry! You'll have to bother those Twitter guys about this.");
+      clearInterval(scrollInterval);
+    }
   }
 };
 
 function nearBottomOfPage() {
-  return scrollDistanceFromBottom() < 100;
+  return scrollDistanceFromBottom() < 150;
 };
 
 function scrollDistanceFromBottom(argument) {
@@ -26,13 +32,16 @@ function pageHeight() {
 
 //END
 
+
 // Ready & Page:Load Function
 
 var ready;
 ready = function() {
   searchVal = $("#search").val();
-  setInterval("checkScroll()", 1000);
+  scrollInterval = setInterval("checkScroll()", 1000);
 };
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
+//END

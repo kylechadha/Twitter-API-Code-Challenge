@@ -33,7 +33,12 @@
               <% end %>
 
             <% else %>
-              <i class="fa fa-check-circle-o" onclick="alert('Log in first :]')"></i>
+              <a href="#" data-reveal-id="myModal"><i class="fa fa-check-circle-o"></i></a>
+              <div id="myModal" class="reveal-modal" data-reveal>
+                <h2>Holy crap WHAT ARE YOU DOING?!?!?</h2>
+                <p class="lead">Just kidding, it's no biggie. But, you'll need to sign in before you do that.</p>
+                <a class="close-reveal-modal">&#215;</a>
+              </div>
             <% end %>
           </span>
         </div>

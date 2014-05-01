@@ -1,8 +1,9 @@
 class Search
   include Mongoid::Document
 
-  # require 'oauth_util.rb'
+  # Played around with doing oauth by hand, but didn't have enough time to build out the full functionality... was an interesting experience though! (...But can see why it's not most people's favorite thang x_x)
 
+  # require 'oauth_util.rb'
   # def self.request(keywords)
 
     # oauth = OauthUtil.new

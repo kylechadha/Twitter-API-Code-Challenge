@@ -5,7 +5,9 @@ class User
   field :name, type: String
   field :access_token, type: String
   field :access_token_secret, type: String
+  field :favorited_tweets, type: Array
 
+  # Define the twitter client on each user
   def twitter
     @twitter ||= Twitter::REST::Client.new do |config|
       config.consumer_key        = "EGtAiRXlnFzX90MPtkHA"

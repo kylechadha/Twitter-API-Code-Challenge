@@ -81,6 +81,10 @@
         }
         i {
           font-size: 1.4rem;
+          color: #222;
+          &:hover {
+            color: #008CBA;
+          }
         }
       }
       &:hover {

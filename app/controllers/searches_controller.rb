@@ -20,4 +20,7 @@ class SearchesController < ApplicationController
       format.js
     end
   end
+
+  def create
+  end
 end

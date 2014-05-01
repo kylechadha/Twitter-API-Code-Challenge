@@ -10,7 +10,9 @@
           <h2><%= "@#{tweet.user.user_name}" %></h2><br>
           <%= tweet.text %><br>
           <a href="<%= tweet.uri %>" target="_blank"><%= tweet.uri %></a>
-          <span data-tooltip class="has-tip tip-top" title="Favorite me plz :]"><i class="fa fa-check-circle-o"></i></span>
+          <span data-tooltip class="has-tip tip-top" title="Favorite me plz :]">
+            <%= link_to raw('<i class="fa fa-check-circle-o"></i>'), favorite_path(tweet), method: 'post' %>
+          </span>
         </div>
       </li>
     <% end %>

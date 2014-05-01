@@ -1,7 +1,7 @@
 class Search
   include Mongoid::Document
 
-  # Played around with doing oauth by hand, but didn't have enough time to build out the full functionality... was an interesting experience though! (...But can see why it's not most people's favorite thang x_x)
+  # Played around with doing oauth by hand, but didn't have enough time to build out the full functionality... was interesting to dig deeper into oauth though. (...But can see why it's not most people's favorite thang x_x)
 
   # require 'oauth_util.rb'
   # def self.request(keywords)

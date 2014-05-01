@@ -10,6 +10,7 @@ class User
   # Define the twitter client on each user
   def twitter
     @twitter ||= Twitter::REST::Client.new do |config|
+      # Normally you would never leave these exposed
       config.consumer_key        = "EGtAiRXlnFzX90MPtkHA"
       config.consumer_secret     = "OkDiA6C0Ej2yBg9Jh6Rdhoxc25b5aMfQLRwbY1Mw0U"
       config.access_token        = access_token

@@ -1,7 +1,3 @@
-# A utility for signing an url using OAuth in a way that's convenient for debugging
-# Note: the standard Ruby OAuth lib is here http://github.com/mojodna/oauth
-# License: http://gist.github.com/375593
-# Usage: see example.rb below
  
 require 'uri'
 require 'cgi'
@@ -14,10 +10,10 @@ class OauthUtil
                 :sig_method, :oauth_version, :callback_url, :params, :req_url, :base_str
 
   def initialize
-    @consumer_key = 'EGtAiRXlnFzX90MPtkHA'
-    @consumer_secret = 'OkDiA6C0Ej2yBg9Jh6Rdhoxc25b5aMfQLRwbY1Mw0U'
-    @token = '1537159381-ZbqzUQ34orD7szZH52iywvov7DD7zqYjmwEwjWx'
-    @token_secret = 'vWUkdik99vbAO0Nt9USv78xnALNW9b8R6BXp0Zy30ijLp'
+    @consumer_key = ''
+    @consumer_secret = ''
+    @token = ''
+    @token_secret = ''
     @req_method = 'GET'
     @sig_method = 'HMAC-SHA1'
     @oauth_version = '1.0'

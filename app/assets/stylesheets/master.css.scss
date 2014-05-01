@@ -46,5 +46,37 @@
   #search-results {
     margin: 0% 5%;
     margin-top: 4%;
+    .tweet {
+      list-style: none;
+      border-bottom: 1px solid darken(#F5F8FA, 10%);
+      padding: 5px 0 20px 0;
+      .tweet-image {
+        display: inline-block;
+        margin: 5px;
+        width: 6%;
+        vertical-align: top;
+        img {
+          // Nah, even though Twitter does it, border radii are so last year...
+          // border-radius: 5px;
+        }
+      }
+      .tweet-content {
+        display: inline-block;
+        width: 92%;
+        word-wrap: break-word;
+        h1 {
+          display: inline;
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        h2 {
+          display: inline;
+          font-size: 0.9rem;
+        }
+      }
+      &:hover {
+        background-color: darken(#F5F8FA, 0%);
+      }
+    }
   }
 }

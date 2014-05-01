@@ -7,14 +7,14 @@ class SearchesController < ApplicationController
       @display = 10
     end
 
-    # If authenticated, use user auth to search, otherwise use application auth 
+    # If authenticated, use user oauth to search, otherwise use application oauth 
     if params[:search] and params[:search] != "" and current_user
       @results = current_user.twitter.search(params[:search], :count => @display, :lang => 'en')
     elsif params[:search] and params[:search] != ""
       @results = application.search(params[:search], :count => @display, :lang => 'en')
     end
 
-    # Support AJAX javascript calls
+    # Respond to AJAX javascript calls
     respond_to do |format|
       format.html
       format.js

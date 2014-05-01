@@ -2,11 +2,16 @@
   <ul>
     <% @results.each do |tweet| %>
       <li class="tweet">
-        <%= image_tag("#{tweet.user.profile_image_url}") %> <strong><%= tweet.user.name %></strong> <%= "@#{tweet.user.user_name}" %><br>
-        <%= tweet.text %><br>
-        <a href="<%= tweet.uri %>" target="_blank"><%= tweet.uri %></a>
+        <div class="tweet-image">
+          <%= image_tag("#{tweet.user.profile_image_url}") %>
+        </div>
+        <div class="tweet-content">
+          <h1><%= tweet.user.name %></h1>
+          <h2><%= "@#{tweet.user.user_name}" %></h2><br>
+          <%= tweet.text %><br>
+          <a href="<%= tweet.uri %>" target="_blank"><%= tweet.uri %></a>
+        </div>
       </li>
-      <br>
     <% end %>
   </ul>
 <% end %>

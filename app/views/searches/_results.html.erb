@@ -15,7 +15,7 @@
           <%= tweet.text %><br>
           <a href="<%= tweet.uri %>" target="_blank"><%= tweet.uri %></a>
 
-          <span data-tooltip class="has-tip tip-top" title="Favorite me plz :]">
+          <span data-tooltip class="has-tip tip-top" title="Favorite me, kthx :]">
             <% if current_user %>
               <% if current_user.favorited_tweets %>
                 <% favorited = false %>

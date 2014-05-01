@@ -22,5 +22,12 @@ class SearchesController < ApplicationController
   end
 
   def create
+    @favorited_tweet = params[:tweet]
+    current_user.favorited_tweets ||= []
+    current_user.favorited_tweets << @favorited_tweet
+
+    if current_user.save
+      redirect_to root_path(search: params[:search])
+    end
   end
 end

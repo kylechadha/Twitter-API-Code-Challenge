@@ -11,7 +11,11 @@
           <%= tweet.text %><br>
           <a href="<%= tweet.uri %>" target="_blank"><%= tweet.uri %></a>
           <span data-tooltip class="has-tip tip-top" title="Favorite me plz :]">
-            <%= link_to raw('<i class="fa fa-check-circle-o"></i>'), favorite_path(tweet), method: 'post' %>
+            <% if current_user %>
+              <%= link_to raw('<i class="fa fa-check-circle-o"></i>'), favorite_path(tweet: tweet, search: params[:search]), method: 'post' %>
+            <% else %>
+              <i class="fa fa-check-circle-o" onclick="alert('Log in first :]')"></i>
+            <% end %>
           </span>
         </div>
       </li>

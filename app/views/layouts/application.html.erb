@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "BuzzFeed Twittah Portal" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -12,11 +12,12 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body id="<%= @page %>">
     <%= render partial: 'layouts/navigation' %>
 
     <%= yield %>
 
+    <!-- Initialize Foundation without having to pull down all of your script tags -->
     <script>$(document).foundation().foundation('joyride', 'start');</script>
   </body>
 </html>

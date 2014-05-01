@@ -1,4 +1,4 @@
-<% if params[:search] %>
+<% if params[:search] and params[:search] != "" %>
   <ul>
     <% @results.each do |tweet| %>
       <li class="tweet">

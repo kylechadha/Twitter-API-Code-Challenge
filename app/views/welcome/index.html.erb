@@ -1,9 +1,0 @@
-<% if current_user %>
-  Hey there <strong><%= current_user.name %></strong>, looking pretty good today!
-  <%= link_to "Sign Out", logout_path %>
-<% else %>
-  <%= link_to "Sign in with Twitter!", "/auth/twitter" %>
-<% end %>
-
-<%= search_results = HTTParty.get "https://api.twitter.com/1.1/search/tweets.json?q=%40twitterapi" %>
-<%= puts search_results %>
